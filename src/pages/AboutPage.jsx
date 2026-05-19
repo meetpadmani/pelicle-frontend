@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+﻿import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, useInView, useMotionValueEvent, useMotionValue, useSpring } from 'framer-motion';
 import ScrollBeadNav from '../components/common/ScrollBeadNav';
@@ -17,7 +17,7 @@ const SECTIONS = [
   { id: 'closing',   label: 'Closing'   },
 ];
 
-/* ── Custom Magnetic Cursor ── */
+/* â”€â”€ Custom Magnetic Cursor â”€â”€ */
 const CustomCursor = () => {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
@@ -49,7 +49,7 @@ const CustomCursor = () => {
   );
 };
 
-/* ── Reusable 3D fade-in-up wrapper ── */
+/* â”€â”€ Reusable 3D fade-in-up wrapper â”€â”€ */
 const Reveal = ({ children, delay = 0, className = '', variant = '3d', side = 'left' }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-15%' });
@@ -83,7 +83,7 @@ const Reveal = ({ children, delay = 0, className = '', variant = '3d', side = 'l
   );
 };
 
-/* ── Timeline Bead ── */
+/* â”€â”€ Timeline Bead â”€â”€ */
 const TimelineBead = ({ scrollYProgress, index, total }) => {
   const center = total > 1 ? index / (total - 1) : 0;
   const [active, setActive] = useState(index === 0);
@@ -103,7 +103,7 @@ const TimelineBead = ({ scrollYProgress, index, total }) => {
   );
 };
 
-/* ── Advanced Horizontal Sticky Scroll (Desktop Only) ── */
+/* â”€â”€ Advanced Horizontal Sticky Scroll (Desktop Only) â”€â”€ */
 const HorizontalTimeline = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: targetRef, offset: ["start start", "end end"] });
@@ -111,10 +111,10 @@ const HorizontalTimeline = () => {
   const bgX = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
 
   const phases = [
-    { phase: '01', icon: '💡', title: 'The Spark', text: 'A vision born from frustration — fashion that was either too generic or too unaffordable. Pelicle was conceived as the middle ground: premium without pretension.' },
-    { phase: '02', icon: '✏️', title: 'The Design', text: 'Weeks of sketches, fabric swatches, and countless iterations. Every cut was deliberate. Every detail earned its place on the garment.' },
-    { phase: '03', icon: '🧵', title: 'The Craft', text: 'Partnering with skilled artisans, Pelicle brought its first collection to life — threading identity into every stitch, building quality that speaks without words.' },
-    { phase: '04', icon: '🚀', title: 'The Launch', text: 'Pelicle entered the world. Real people, real responses. A brand that instantly resonated with those who refused to blend into the crowd.' },
+    { phase: '01', icon: 'ðŸ’¡', title: 'The Spark', text: 'A vision born from frustration â€” fashion that was either too generic or too unaffordable. Pelicle was conceived as the middle ground: premium without pretension.' },
+    { phase: '02', icon: 'âœï¸', title: 'The Design', text: 'Weeks of sketches, fabric swatches, and countless iterations. Every cut was deliberate. Every detail earned its place on the garment.' },
+    { phase: '03', icon: 'ðŸ§µ', title: 'The Craft', text: 'Partnering with skilled artisans, Pelicle brought its first collection to life â€” threading identity into every stitch, building quality that speaks without words.' },
+    { phase: '04', icon: 'ðŸš€', title: 'The Launch', text: 'Pelicle entered the world. Real people, real responses. A brand that instantly resonated with those who refused to blend into the crowd.' },
   ];
 
   return (
@@ -177,7 +177,7 @@ const HorizontalTimeline = () => {
   );
 };
 
-/* ── Core Pillars 3D Accordion ── */
+/* â”€â”€ Core Pillars 3D Accordion â”€â”€ */
 const CorePillars = () => {
   const [hovered, setHovered] = useState(1);
   const [isMobile, setIsMobile] = useState(false);
@@ -259,7 +259,7 @@ const CorePillars = () => {
   );
 };
 
-/* ── Signature Aesthetic 3D Gallery ── */
+/* â”€â”€ Signature Aesthetic 3D Gallery â”€â”€ */
 const SignatureAesthetic = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start end', 'end start'] });
@@ -302,7 +302,7 @@ const SignatureAesthetic = () => {
   );
 };
 
-/* ── 3D Manifesto Scroll Ring ── */
+/* â”€â”€ 3D Manifesto Scroll Ring â”€â”€ */
 const ManifestoRing = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start end', 'end start'] });
@@ -368,7 +368,7 @@ const ManifestoRing = () => {
             animate={{ rotate: 360 }} transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
             style={{ width: 64, height: 64, margin: '0 auto 16px', borderRadius: '50%', background: 'linear-gradient(135deg, #c9a55a, #8f7236)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 0 40px rgba(201,165,90,0.8)' }}
           >
-            <span style={{ color: '#080c0a', fontSize: 24, fontWeight: 700 }}>✦</span>
+            <span style={{ color: '#080c0a', fontSize: 24, fontWeight: 700 }}>âœ¦</span>
           </motion.div>
           <p style={{ fontSize: 11, fontWeight: 700, color: '#f0ede7', letterSpacing: '0.5em', textTransform: 'uppercase', textShadow: '0 4px 10px rgba(0,0,0,0.5)' }}>The Core</p>
        </motion.div>
@@ -376,7 +376,7 @@ const ManifestoRing = () => {
   )
 }
 
-/* ── Scroll Card ── wraps a section and scales/rotates it out as user scrolls past */
+/* â”€â”€ Scroll Card â”€â”€ wraps a section and scales/rotates it out as user scrolls past */
 const ScrollCard = ({ id, children, style = {}, className = '' }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start 0.05', 'end start'] });
@@ -395,7 +395,7 @@ const ScrollCard = ({ id, children, style = {}, className = '' }) => {
   );
 };
 
-/* ── Animated counter ── */
+/* â”€â”€ Animated counter â”€â”€ */
 const Counter = ({ to, suffix = '' }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
@@ -440,7 +440,7 @@ export default function AboutPage() {
       <ScrollProgressBar />
       <ScrollBeadNav sections={SECTIONS} />
 
-      {/* ═══════════════════════════ 1. HERO ═══════════════════════════ */}
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• 1. HERO â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <section id="hero" ref={heroRef} style={{ position: 'relative', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
         {/* Gradient orbs */}
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
@@ -478,7 +478,7 @@ export default function AboutPage() {
           {/* Eyebrow */}
           <motion.p initial={{ opacity: 0, letterSpacing: '0.3em' }} animate={{ opacity: 1, letterSpacing: '0.5em' }} transition={{ duration: 1.2 }}
             style={{ fontSize: 11, fontWeight: 700, color: '#c9a55a', textTransform: 'uppercase', marginBottom: 32, letterSpacing: '0.5em' }}>
-            Since 2024 · Wear Your Identity
+            Since 2024 Â· Wear Your Identity
           </motion.p>
 
           {/* 3D Brand name */}
@@ -511,7 +511,7 @@ export default function AboutPage() {
         </motion.div>
       </section>
 
-      {/* ═══════════════════════════ 2. BRAND STORY ═══════════════════════════ */}
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• 2. BRAND STORY â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <ScrollCard id="story" style={{ padding: 'clamp(80px,12vw,160px) clamp(24px,8vw,120px)', position: 'relative' }}>
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 1, background: 'linear-gradient(90deg, transparent, rgba(201,165,90,0.3), transparent)' }} />
 
@@ -527,13 +527,13 @@ export default function AboutPage() {
           <div>
             <Reveal delay={0.2}>
               <p style={{ fontSize: 'clamp(16px,1.5vw,20px)', lineHeight: 1.9, color: 'rgba(240,237,231,0.7)', marginBottom: 28 }}>
-                Pelicle is more than clothing — it's expression. Built for individuals who stand out, not fit in.
+                Pelicle is more than clothing â€” it's expression. Built for individuals who stand out, not fit in.
               </p>
               <p style={{ fontSize: 'clamp(16px,1.5vw,20px)', lineHeight: 1.9, color: 'rgba(240,237,231,0.7)', marginBottom: 40 }}>
-                Every piece is designed to reflect confidence, identity, and bold simplicity. We don't follow trends — we set them.
+                Every piece is designed to reflect confidence, identity, and bold simplicity. We don't follow trends â€” we set them.
               </p>
               <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
-                {[{ n: 500, s: '+', label: 'Designs', icon: '✦' }, { n: 12, s: 'K+', label: 'Customers', icon: '◈' }, { n: 100, s: '%', label: 'Premium', icon: '◎' }].map((stat, i) => (
+                {[{ n: 500, s: '+', label: 'Designs', icon: 'âœ¦' }, { n: 12, s: 'K+', label: 'Customers', icon: 'â—ˆ' }, { n: 100, s: '%', label: 'Premium', icon: 'â—Ž' }].map((stat, i) => (
                   <motion.div
                     key={i}
                     whileHover={{ y: -12, rotateX: -10, rotateY: 8, scale: 1.06 }}
@@ -563,7 +563,7 @@ export default function AboutPage() {
         </div>
       </ScrollCard>
 
-      {/* ═══════════════════════════ 3. FOUNDER ═══════════════════════════ */}
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• 3. FOUNDER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <ScrollCard id="founder" style={{ padding: 'clamp(80px,12vw,140px) clamp(24px,8vw,120px)', background: 'rgba(13,61,44,0.08)', position: 'relative' }}>
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 1, background: 'linear-gradient(90deg, transparent, rgba(201,165,90,0.2), transparent)' }} />
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 1, background: 'linear-gradient(90deg, transparent, rgba(201,165,90,0.2), transparent)' }} />
@@ -572,7 +572,7 @@ export default function AboutPage() {
           <Reveal>
             <p style={{ fontSize: 11, fontWeight: 700, color: '#c9a55a', letterSpacing: '0.5em', textTransform: 'uppercase', marginBottom: 20 }}>The Visionary</p>
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(36px,5vw,64px)', fontWeight: 700, lineHeight: 1.15, marginBottom: 60 }}>
-              Founded by<br /><span style={{ color: '#c9a55a', fontStyle: 'italic' }}>Meet Paddmani</span>
+              Founded by<br /><span style={{ color: '#c9a55a', fontStyle: 'italic' }}>Meet Padmani</span>
             </h2>
           </Reveal>
 
@@ -625,12 +625,12 @@ export default function AboutPage() {
               </div>
 
               <p style={{ fontSize: 'clamp(16px,1.5vw,20px)', lineHeight: 1.9, color: 'rgba(240,237,231,0.75)', maxWidth: 600, margin: '0 auto 32px' }}>
-                "Driven by passion and vision, <strong style={{ color: '#c9a55a', fontWeight: 700, letterSpacing: '0.02em', textShadow: '0 2px 10px rgba(201,165,90,0.3)' }}>Meet Paddmani</strong> created Pelicle to redefine everyday fashion with a premium edge. Every stitch is intentional. Every design is a statement."
+                "Driven by passion and vision, <strong style={{ color: '#c9a55a', fontWeight: 700, letterSpacing: '0.02em', textShadow: '0 2px 10px rgba(201,165,90,0.3)' }}>Meet Padmani</strong> created Pelicle to redefine everyday fashion with a premium edge. Every stitch is intentional. Every design is a statement."
               </p>
 
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12 }}>
                 <div style={{ width: 32, height: 1, background: '#c9a55a' }} />
-                <p style={{ fontSize: 12, fontWeight: 700, color: '#c9a55a', letterSpacing: '0.3em', textTransform: 'uppercase' }}>Meet Paddmani — Founder & Creative Director</p>
+                <p style={{ fontSize: 12, fontWeight: 700, color: '#c9a55a', letterSpacing: '0.3em', textTransform: 'uppercase' }}>Meet Padmani â€” Founder & Creative Director</p>
                 <div style={{ width: 32, height: 1, background: '#c9a55a' }} />
               </div>
             </motion.div>
@@ -638,7 +638,7 @@ export default function AboutPage() {
         </div>
       </ScrollCard>
 
-      {/* ═══════════════════════════ 4. VISION & MISSION ═══════════════════════════ */}
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• 4. VISION & MISSION â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <ScrollCard id="purpose" style={{ padding: 'clamp(80px,12vw,140px) clamp(24px,8vw,80px)' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <Reveal>
@@ -651,16 +651,16 @@ export default function AboutPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '32px' }}>
             {[
               {
-                label: 'Vision', icon: '◎',
+                label: 'Vision', icon: 'â—Ž',
                 title: 'A World Dressed in Identity',
-                body: 'To be the global symbol of self-expression through fashion — where every garment tells the wearer\'s unique story with confidence, elegance, and edge.',
+                body: 'To be the global symbol of self-expression through fashion â€” where every garment tells the wearer\'s unique story with confidence, elegance, and edge.',
                 accent: 'rgba(201,165,90,0.08)',
                 side: 'left',
               },
               {
-                label: 'Mission', icon: '◈',
+                label: 'Mission', icon: 'â—ˆ',
                 title: 'Crafting Premium with Purpose',
-                body: 'To design and deliver premium clothing that empowers individuals to stand out — combining bold simplicity with impeccable craftsmanship, accessible to all.',
+                body: 'To design and deliver premium clothing that empowers individuals to stand out â€” combining bold simplicity with impeccable craftsmanship, accessible to all.',
                 accent: 'rgba(13,61,44,0.2)',
                 side: 'right',
               },
@@ -684,22 +684,22 @@ export default function AboutPage() {
         </div>
       </ScrollCard>
 
-      {/* ═══════════════════════════ 4.2. CORE PILLARS ═══════════════════════════ */}
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• 4.2. CORE PILLARS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <CorePillars />
 
-      {/* ═══════════════════════════ 4.5. THE AESTHETIC GALLERY ═══════════════════════════ */}
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• 4.5. THE AESTHETIC GALLERY â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <SignatureAesthetic />
 
-      {/* ═══════════════════════════ 5. EVOLUTION TIMELINE ═══════════════════════════ */}
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• 5. EVOLUTION TIMELINE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <div id="journey">
         {/* Horizontal Sticky Scroll (Now for both Mobile and Desktop) */}
         <HorizontalTimeline />
       </div>
 
-      {/* ═══════════════════════════ 5.2. MANIFESTO CYLINDER ═══════════════════════════ */}
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• 5.2. MANIFESTO CYLINDER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <ManifestoRing />
 
-      {/* ═══════════════════════════ 5.5. CRAFTSMANSHIP ═══════════════════════════ */}
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• 5.5. CRAFTSMANSHIP â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <ScrollCard id="anatomy" style={{ padding: 'clamp(80px,12vw,140px) clamp(24px,8vw,80px)', position: 'relative' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <Reveal>
@@ -734,7 +734,7 @@ export default function AboutPage() {
         </div>
       </ScrollCard>
 
-      {/* ═══════════════════════════ 5.8. THE PROMISE — 3D CARD FLIP GRID ═══════════════════════════ */}
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• 5.8. THE PROMISE â€” 3D CARD FLIP GRID â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <ScrollCard id="promise" style={{ padding: 'clamp(80px,12vw,140px) clamp(24px,8vw,80px)', position: 'relative', overflow: 'hidden' }}>
         {/* bg radial glow */}
         <div style={{ position: 'absolute', top: '40%', left: '50%', transform: 'translate(-50%,-50%)', width: '70%', height: '70%', background: 'radial-gradient(circle, rgba(13,61,44,0.4) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none' }} />
@@ -753,23 +753,23 @@ export default function AboutPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
             {[
               {
-                front: { icon: '✦', title: 'Premium Only' },
-                back: { title: 'Premium Only', body: 'Every fabric is sourced from certified mills. We accept nothing below luxury grade — period.' },
+                front: { icon: 'âœ¦', title: 'Premium Only' },
+                back: { title: 'Premium Only', body: 'Every fabric is sourced from certified mills. We accept nothing below luxury grade â€” period.' },
                 accent: '#c9a55a',
               },
               {
-                front: { icon: '◉', title: 'Fit Perfected' },
+                front: { icon: 'â—‰', title: 'Fit Perfected' },
                 back: { title: 'Fit Perfected', body: 'Each pattern is cut and graded across 12 size points, engineered to drape perfectly on every body type.' },
                 accent: '#7ec8a4',
               },
               {
-                front: { icon: '◈', title: 'Conscious Craft' },
+                front: { icon: 'â—ˆ', title: 'Conscious Craft' },
                 back: { title: 'Conscious Craft', body: 'Sustainable production, ethical sourcing. We build garments that respect both you and the planet.' },
                 accent: '#c9a55a',
               },
               {
-                front: { icon: '◆', title: 'Bold Always' },
-                back: { title: 'Bold Always', body: 'No watered-down aesthetics. Pelicle is a declaration — every drop is designed to make you unforgettable.' },
+                front: { icon: 'â—†', title: 'Bold Always' },
+                back: { title: 'Bold Always', body: 'No watered-down aesthetics. Pelicle is a declaration â€” every drop is designed to make you unforgettable.' },
                 accent: '#7ec8a4',
               },
             ].map((card, i) => (
@@ -820,7 +820,7 @@ export default function AboutPage() {
         </div>
       </ScrollCard>
 
-      {/* ═══════════════════════════ 5.9. BEHIND THE SCENES — CINEMATIC SPLIT ═══════════════════════════ */}
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• 5.9. BEHIND THE SCENES â€” CINEMATIC SPLIT â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <ScrollCard style={{ padding: 'clamp(60px,10vw,140px) clamp(20px,6vw,80px)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <Reveal>
@@ -831,7 +831,7 @@ export default function AboutPage() {
           </Reveal>
 
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-center">
-            {/* Left — Image with floating badge */}
+            {/* Left â€” Image with floating badge */}
             <div className="w-full lg:flex-1" style={{ position: 'relative', paddingBottom: 32 }}>
               <motion.div
                 initial={{ opacity: 0, x: -40, rotateY: -10 }}
@@ -847,7 +847,7 @@ export default function AboutPage() {
                 />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(8,12,10,0.3), transparent)' }} />
               </motion.div>
-              {/* Floating badge — repositioned for mobile */}
+              {/* Floating badge â€” repositioned for mobile */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.7, y: 20 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -861,10 +861,10 @@ export default function AboutPage() {
               </motion.div>
             </div>
 
-            {/* Right — Steps */}
+            {/* Right â€” Steps */}
             <div className="w-full lg:flex-1" style={{ paddingTop: 8 }}>
               {[
-                { num: '01', title: 'The Sketch', body: 'Every piece begins with a hand-drawn concept. No computer shortcuts — raw creative instinct on paper first.' },
+                { num: '01', title: 'The Sketch', body: 'Every piece begins with a hand-drawn concept. No computer shortcuts â€” raw creative instinct on paper first.' },
                 { num: '02', title: 'The Fabric', body: 'We travel sourcing fairs across India to handpick fabrics that meet our strict weight, texture, and drape standards.' },
                 { num: '03', title: 'The Drop', body: 'Limited-run production. Each garment is quality-checked by hand before it ever reaches your doorstep.' },
               ].map((step, i) => (
@@ -893,7 +893,7 @@ export default function AboutPage() {
         </div>
       </ScrollCard>
 
-      {/* ═══════════════════════════ 5.95. BRAND DNA TAPE ═══════════════════════════ */}
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• 5.95. BRAND DNA TAPE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <div style={{ padding: 'clamp(28px,5vw,60px) 0', overflow: 'hidden', borderTop: '1px solid rgba(201,165,90,0.08)', borderBottom: '1px solid rgba(201,165,90,0.08)', background: 'rgba(13,61,44,0.08)' }}>
         <motion.div
           animate={{ x: ['0%', '-50%'] }}
@@ -901,14 +901,14 @@ export default function AboutPage() {
           style={{ display: 'flex', gap: 0, width: 'max-content', alignItems: 'center' }}
         >
           {[...Array(2)].map((_, rep) =>
-            ['PREMIUM', '✦', 'BOLD', '◆', 'CRAFTED', '✦', 'AUTHENTIC', '◆', 'LIMITED', '✦', 'ELEVATED', '◆', 'PELICLE', '✦'].map((word, i) => (
+            ['PREMIUM', 'âœ¦', 'BOLD', 'â—†', 'CRAFTED', 'âœ¦', 'AUTHENTIC', 'â—†', 'LIMITED', 'âœ¦', 'ELEVATED', 'â—†', 'PELICLE', 'âœ¦'].map((word, i) => (
               <span
                 key={`${rep}-${i}`}
                 style={{
-                  fontFamily: word === '✦' || word === '◆' ? 'serif' : "'Cormorant Garamond', serif",
-                  fontSize: word === '✦' || word === '◆' ? 'clamp(14px,2vw,20px)' : 'clamp(18px,3.5vw,44px)',
+                  fontFamily: word === 'âœ¦' || word === 'â—†' ? 'serif' : "'Cormorant Garamond', serif",
+                  fontSize: word === 'âœ¦' || word === 'â—†' ? 'clamp(14px,2vw,20px)' : 'clamp(18px,3.5vw,44px)',
                   fontWeight: 700,
-                  color: word === '✦' || word === '◆' ? '#c9a55a' : 'rgba(240,237,231,0.2)',
+                  color: word === 'âœ¦' || word === 'â—†' ? '#c9a55a' : 'rgba(240,237,231,0.2)',
                   letterSpacing: '0.12em',
                   padding: '0 clamp(12px,2.5vw,36px)',
                   whiteSpace: 'nowrap',
@@ -922,7 +922,7 @@ export default function AboutPage() {
         </motion.div>
       </div>
 
-      {/* ═══════════════════════════ 6. CLOSING CTA ═══════════════════════════ */}
+      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• 6. CLOSING CTA â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <ScrollCard id="closing" style={{ padding: 'clamp(100px,15vw,180px) clamp(24px,8vw,80px)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
           <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: 600, height: 600, borderRadius: '50%', background: 'radial-gradient(circle, rgba(201,165,90,0.08) 0%, transparent 65%)', filter: 'blur(60px)' }} />
@@ -957,3 +957,4 @@ export default function AboutPage() {
     </div>
   );
 }
+
