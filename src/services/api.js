@@ -1,8 +1,10 @@
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-// Dynamic base URL: works on localhost AND any network IP
-const API_BASE = `${window.location.protocol}//${window.location.hostname}:5000/api`;
+// Dynamic base URL: connects to live backend in production, localhost in development
+const API_BASE = import.meta.env.PROD 
+  ? 'https://pelicle-beckend.onrender.com/api' 
+  : `${window.location.protocol}//${window.location.hostname}:5000/api`;
 
 const API = axios.create({
   baseURL: API_BASE,
