@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PELLICLE — Brand Design System
+   "Wear Your Story" · Modern Athleisure
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Primary */
+  --deep-forest:    #0F1F17;
+  --warm-ivory:     #F4F1EB;
+  --stone-gray:     #D9D9D6;
+  --midnight-navy:  #0D1B2A;
+  --jet-black:      #111111;
+  /* Neutral */
+  --pure-white:     #FFFFFF;
+  --light-beige:    #EDE8DF;
+  --cool-taupe:     #B8B5AE;
+  --charcoal:       #2B2B2B;
+  /* Accent */
+  --olive-green:    #6B7A4D;
+  --sandalwood:     #C79A6B;
+  --dusty-blue:     #607D8B;
+  --sage-green:     #A7B897;
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--warm-ivory);
+  color: var(--jet-black);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--light-beige); }
+::-webkit-scrollbar-thumb { background: var(--deep-forest); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--olive-green); }
+
+/* ─── Selection ──────────────────────────────────────────────────────────── */
+::selection {
+  background-color: rgba(107,122,77,0.25);
+  color: var(--deep-forest);
+}
+
+/* ─── Skeleton Loader ────────────────────────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(90deg, #ede8df 25%, #d9d9d6 50%, #ede8df 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ─── Slick Slider ───────────────────────────────────────────────────────── */
+.slick-dots li button:before { color: var(--olive-green) !important; font-size: 10px !important; }
+.slick-dots li.slick-active button:before { color: var(--deep-forest) !important; }
+.slick-prev:before, .slick-next:before { color: var(--pure-white) !important; font-size: 24px !important; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Component Classes
+   ═══════════════════════════════════════════════════════════════════════════ */
+@layer components {
+
+  /* ── Buttons ────────────────────────────────────────────────────────────── */
+  .btn-primary {
+    @apply font-semibold py-3 px-6 rounded-lg transition-all duration-200 active:scale-95
+           disabled:opacity-50 disabled:cursor-not-allowed;
+    background-color: var(--olive-green);
+    color: var(--pure-white);
+    box-shadow: 0 4px 14px rgba(107,122,77,0.30);
+  }
+  .btn-primary:hover {
+    background-color: #5a6940;
+    box-shadow: 0 6px 20px rgba(107,122,77,0.40);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    @apply font-semibold py-3 px-6 rounded-lg transition-all duration-200 active:scale-95
+           disabled:opacity-50 disabled:cursor-not-allowed;
+    border: 2px solid var(--deep-forest);
+    color: var(--deep-forest);
+    background: transparent;
+  }
+  .btn-secondary:hover {
+    background-color: var(--deep-forest);
+    color: var(--pure-white);
+  }
+
+  .btn-ghost {
+    @apply font-medium py-2 px-4 rounded-lg transition-all duration-200;
+    color: var(--charcoal);
+  }
+  .btn-ghost:hover {
+    color: var(--deep-forest);
+    background-color: var(--light-beige);
+  }
+
+  /* ── Cards ──────────────────────────────────────────────────────────────── */
+  .card {
+    @apply rounded-2xl overflow-hidden;
+    background: var(--pure-white);
+    border: 1px solid var(--stone-gray);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03), 0 8px 24px -4px rgba(0,0,0,0.04);
+  }
+
+  /* ── Inputs ─────────────────────────────────────────────────────────────── */
+  .input-field {
+    @apply w-full rounded-lg px-4 py-3 text-sm transition-all duration-200;
+    border: 1px solid var(--stone-gray);
+    background: var(--pure-white);
+    color: var(--jet-black);
+    outline: none;
+  }
+  .input-field::placeholder { color: var(--cool-taupe); }
+  .input-field:focus {
+    border-color: var(--olive-green);
+    box-shadow: 0 0 0 3px rgba(107,122,77,0.15);
+  }
+
+  /* ── Badges ─────────────────────────────────────────────────────────────── */
+  .badge {
+    @apply inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full;
+  }
+  .badge-gold {
+    @apply badge;
+    background: rgba(199,154,107,0.15);
+    color: #8a6635;
+  }
+  .badge-success {
+    @apply badge bg-emerald-100 text-emerald-700;
+  }
+  .badge-danger {
+    @apply badge bg-red-100 text-red-700;
+  }
+
+  /* ── Typography ─────────────────────────────────────────────────────────── */
+  .section-title {
+    font-family: 'DM Sans', sans-serif;
+    @apply text-3xl md:text-4xl font-bold;
+    color: var(--deep-forest);
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .product-card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1;
+  }
+  .product-card-hover:hover {
+    box-shadow: 0 12px 32px -8px rgba(0,0,0,0.12);
+  }
+}
+
+/* ─── Page Transitions ───────────────────────────────────────────────────── */
+.page-enter { opacity: 0; transform: translateY(10px); }
+.page-enter-active {
+  opacity: 1; transform: translateY(0);
+  transition: opacity 300ms ease, transform 300ms ease;
+}

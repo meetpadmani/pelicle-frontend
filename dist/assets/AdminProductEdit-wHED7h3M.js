@@ -1,0 +1,1 @@
+import{n as t,j as o}from"./index-DZF8oied.js";import{A as m}from"./AdminProductForm-0fgj_VOk.js";import"./image-CSQslBOM.js";import"./arrow-left-D5SENFHw.js";import"./save-BVPPSd4B.js";import"./upload-DRYgbuH4.js";import"./plus-CvYFio_A.js";const c=()=>{const{id:r}=t();return o.jsx(m,{productId:r})};export{c as default};
